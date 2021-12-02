@@ -21,5 +21,5 @@ class Vrag(pygame.sprite.Sprite):
 
     def update(self):
         """"Перемещение врагов"""
-        self.y += 0.1
+        self.y += 0.12
         self.rect.y = self.y

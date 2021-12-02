@@ -1,11 +1,11 @@
 import pygame
+from pygame.sprite import Sprite
 
-
-class Gun():
+class Gun(Sprite):
 
     def __init__(self, screen):
         """Иницилизация пушки"""
-
+        super(Gun, self).__init__()
         self.screen = screen
         self.image = pygame.image.load('images/11.png')
         self.rect = self.image.get_rect()
@@ -23,8 +23,12 @@ class Gun():
     def update_gun(self):
         """"Обвноление позиции пушки"""
         if self.mright and self.rect.right < self.screen_rect.right:
-            self.center += 1.5
+            self.center += 1.9
         if self.mleft and self.rect.left > 0:
-            self.center -= 1.5
+            self.center -= 1.9
 
         self.rect.centerx = self.center
+
+    def create_gun(self):
+        """"Появление новой пушки,при проигрыше"""
+        self.center = self.screen_rect.centerx

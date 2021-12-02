@@ -2,6 +2,8 @@ import pygame
 import controls
 from gun import Gun
 from pygame.sprite import Group
+from stats import Stats
+from scores import Scores
 
 
 def run():
@@ -13,14 +15,18 @@ def run():
     bullets = Group()
     vrags = Group()
     controls.create_vrages(screen, vrags)
+    stats = Stats()
+    sc = Scores(screen, stats)
+
+
 
     while True:
         controls.events(screen, gun, bullets)
-        gun.update_gun()
-        bullets.update()
-        controls.uddate(bg_color, screen, gun, vrags, bullets)
-        controls.uddage_bullets(bullets)
-        controls.update_vrags(vrags)
-
+        if stats.lose_game:
+            gun.update_gun()
+            bullets.update()
+            controls.uddate(bg_color, screen, stats, sc, gun, vrags, bullets)
+            controls.uddage_bullets(screen, stats, sc, vrags, bullets)
+            controls.update_vrags(stats, screen, sc, gun, vrags, bullets)
 
 run()
