@@ -27,7 +27,7 @@ def events(screen, gun, bullets):
                 gun.mleft = False
 
 
-def uddate(bg_color, screen, stats, sc, gun, vrags, bullets):
+def update(bg_color, screen, stats, sc, gun, vrags, bullets):
     """"Обновление экрана"""
     screen.fill(bg_color)
     sc.show_score()
@@ -38,7 +38,7 @@ def uddate(bg_color, screen, stats, sc, gun, vrags, bullets):
     pygame.display.flip()
 
 
-def uddage_bullets(screen, stats, sc,vrags, bullets):
+def uddage_bullets(screen, stats, sc, vrags, bullets):
     """"Обновляет позиции пуль"""
     bullets.update()
     for bullet in bullets.copy():

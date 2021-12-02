@@ -10,7 +10,7 @@ def run():
     pygame.init()
     screen = pygame.display.set_mode((800, 800))
     pygame.display.set_caption("Alien Invasion")
-    bg_color = (0, 0, 0)
+    bg_color = (119, 136, 153)
     gun = Gun(screen)
     bullets = Group()
     vrags = Group()
@@ -24,8 +24,7 @@ def run():
         controls.events(screen, gun, bullets)
         if stats.lose_game:
             gun.update_gun()
-            bullets.update()
-            controls.uddate(bg_color, screen, stats, sc, gun, vrags, bullets)
+            controls.update(bg_color, screen, stats, sc, gun, vrags, bullets)
             controls.uddage_bullets(screen, stats, sc, vrags, bullets)
             controls.update_vrags(stats, screen, sc, gun, vrags, bullets)
 

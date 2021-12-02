@@ -3,7 +3,7 @@ class Stats():
 
     def __init__(self):
         """"Инизализация статистики"""
-        self.guns_left = 3
+        self.guns_left = 2
         self.reset_stats()
         self.lose_game = True
         with open('highscore.txt', 'r') as f:

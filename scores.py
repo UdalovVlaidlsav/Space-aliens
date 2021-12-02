@@ -18,14 +18,14 @@ class Scores():
 
     def image_score(self):
         """"Счет в изображении"""
-        self.score_img = self.font.render(str(self.stats.score), True, self.text_color, (0, 0, 0))
+        self.score_img = self.font.render(str(self.stats.score), True, self.text_color, (119, 136, 153))
         self.score_rect = self.score_img.get_rect()
         self.score_rect.right = self.screen_rect.right - 40
         self.score_rect.top = 20
 
     def imgage_high_score(self):
         """"Рекорд счета"""
-        self.high_score_image = self.font.render(str(self.stats.high_score), True, self.text_color, (0, 0, 0))
+        self.high_score_image = self.font.render(str(self.stats.high_score), True, self.text_color, (119, 136, 153))
         self.high_score_rect = self.high_score_image.get_rect()
         self.high_score_rect.centerx = self.screen_rect.centerx
         self.high_score_rect.top = self.score_rect.top + 20
@@ -44,4 +44,3 @@ class Scores():
         """"Отображение счёта"""
         self.screen.blit(self.score_img, self.screen_rect)
         self.screen.blit(self.high_score_image, self.high_score_rect)
-        self.guns.draw(self.screen)
